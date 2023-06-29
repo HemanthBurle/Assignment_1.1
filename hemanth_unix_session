@@ -1,0 +1,696 @@
+Script started on 2023-06-26 16:59:06+05:30 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="30"]
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ ls
+hemanth_unix_session  [0m[01;34mshell-lesson-data[0m
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ pwd
+/home/hemanthburle
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ ls -F
+hemanth_unix_session  [0m[01;34mshell-lesson-data[0m/
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ ls --help
+Usage: ls [OPTION]... [FILE]...
+List information about the FILEs (the current directory by default).
+Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -a, --all                  do not ignore entries starting with .
+  -A, --almost-all           do not list implied . and ..
+      --author               with -l, print the author of each file
+  -b, --escape               print C-style escapes for nongraphic characters
+      --block-size=SIZE      with -l, scale sizes by SIZE when printing them;
+                               e.g., '--block-size=M'; see SIZE format below
+  -B, --ignore-backups       do not list implied entries ending with ~
+  -c                         with -lt: sort by, and show, ctime (time of last
+                               modification of file status information);
+                               with -l: show ctime and sort by name;
+                               otherwise: sort by ctime, newest first
+  -C                         list entries by columns
+      --color[=WHEN]         colorize the output; WHEN can be 'always' (default
+                               if omitted), 'auto', or 'never'; more info below
+  -d, --directory            list directories themselves, not their contents
+  -D, --dired                generate output designed for Emacs' dired mode
+  -f                         do not sort, enable -aU, disable -ls --color
+  -F, --classify             append indicator (one of */=>@|) to entries
+      --file-type            likewise, except do not append '*'
+      --format=WORD          across -x, commas -m, horizontal -x, long -l,
+                               single-column -1, verbose -l, vertical -C
+      --full-time            like -l --time-style=full-iso
+  -g                         like -l, but do not list owner
+      --group-directories-first
+                             group directories before files;
+                               can be augmented with a --sort option, but any
+                               use of --sort=none (-U) disables grouping
+  -G, --no-group             in a long listing, don't print group names
+  -h, --human-readable       with -l and -s, print sizes like 1K 234M 2G etc.
+      --si                   likewise, but use powers of 1000 not 1024
+  -H, --dereference-command-line
+                             follow symbolic links listed on the command line
+      --dereference-command-line-symlink-to-dir
+                             follow each command line symbolic link
+                               that points to a directory
+      --hide=PATTERN         do not list implied entries matching shell PATTERN
+                               (overridden by -a or -A)
+      --hyperlink[=WHEN]     hyperlink file names; WHEN can be 'always'
+                               (default if omitted), 'auto', or 'never'
+      --indicator-style=WORD  append indicator with style WORD to entry names:
+                               none (default), slash (-p),
+                               file-type (--file-type), classify (-F)
+  -i, --inode                print the index number of each file
+  -I, --ignore=PATTERN       do not list implied entries matching shell PATTERN
+  -k, --kibibytes            default to 1024-byte blocks for disk usage;
+                               used only with -s and per directory totals
+  -l                         use a long listing format
+  -L, --dereference          when showing file information for a symbolic
+                               link, show information for the file the link
+                               references rather than for the link itself
+  -m                         fill width with a comma separated list of entries
+  -n, --numeric-uid-gid      like -l, but list numeric user and group IDs
+  -N, --literal              print entry names without quoting
+  -o                         like -l, but do not list group information
+  -p, --indicator-style=slash
+                             append / indicator to directories
+  -q, --hide-control-chars   print ? instead of nongraphic characters
+      --show-control-chars   show nongraphic characters as-is (the default,
+                               unless program is 'ls' and output is a terminal)
+  -Q, --quote-name           enclose entry names in double quotes
+      --quoting-style=WORD   use quoting style WORD for entry names:
+                               literal, locale, shell, shell-always,
+                               shell-escape, shell-escape-always, c, escape
+                               (overrides QUOTING_STYLE environment variable)
+  -r, --reverse              reverse order while sorting
+  -R, --recursive            list subdirectories recursively
+  -s, --size                 print the allocated size of each file, in blocks
+  -S                         sort by file size, largest first
+      --sort=WORD            sort by WORD instead of name: none (-U), size (-S),
+                               time (-t), version (-v), extension (-X)
+      --time=WORD            with -l, show time as WORD instead of default
+                               modification time: atime or access or use (-u);
+                               ctime or status (-c); also use specified time
+                               as sort key if --sort=time (newest first)
+      --time-style=TIME_STYLE  time/date format with -l; see TIME_STYLE below
+  -t                         sort by modification time, newest first
+  -T, --tabsize=COLS         assume tab stops at each COLS instead of 8
+  -u                         with -lt: sort by, and show, access time;
+                               with -l: show access time and sort by name;
+                               otherwise: sort by access time, newest first
+  -U                         do not sort; list entries in directory order
+  -v                         natural sort of (version) numbers within text
+  -w, --width=COLS           set output width to COLS.  0 means no limit
+  -x                         list entries by lines instead of by columns
+  -X                         sort alphabetically by entry extension
+  -Z, --context              print any security context of each file
+  -1                         list one file per line.  Avoid '\n' with -q or -b
+      --help     display this help and exit
+      --version  output version information and exit
+
+The SIZE argument is an integer and optional unit (example: 10K is 10*1024).
+Units are K,M,G,T,P,E,Z,Y (powers of 1024) or KB,MB,... (powers of 1000).
+
+The TIME_STYLE argument can be full-iso, long-iso, iso, locale, or +FORMAT.
+FORMAT is interpreted like in date(1).  If FORMAT is FORMAT1<newline>FORMAT2,
+then FORMAT1 applies to non-recent files and FORMAT2 to recent files.
+TIME_STYLE prefixed with 'posix-' takes effect only outside the POSIX locale.
+Also the TIME_STYLE environment variable sets the default style to use.
+
+Using color to distinguish file types is disabled both by default and
+with --color=never.  With --color=auto, ls emits color codes only when
+standard output is connected to a terminal.  The LS_COLORS environment
+variable can change the settings.  Use the dircolors command to set it.
+
+Exit status:
+ 0  if OK,
+ 1  if minor problems (e.g., cannot access subdirectory),
+ 2  if serious trouble (e.g., cannot access command-line argument).
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Report ls translation bugs to <https://translationproject.org/team/>
+Full documentation at: <https://www.gnu.org/software/coreutils/ls>
+or available locally via: info '(coreutils) ls invocation'
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ ls -t
+hemanth_unix_session  [0m[01;34mshell-lesson-data[0m
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ ls -r
+[0m[01;34mshell-lesson-data[0m  hemanth_unix_session
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ ls -F shell-lesson-data
+[0m[01;34mexercise-data[0m/  [01;34mnorth-pacific-gyre[0m/
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ cd
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ cd shell-lesson-data
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data[00m$ cd exercie[Kse-data
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data/exercise-data[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data/exercise-data[00m$ ls
+[0m[01;34malkanes[0m  [01;34manimal-counts[0m  [01;34mcreatures[0m  numbers.txt  numbers.txt:Zone.Identifier  [01;34mwriting[0m
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data/exercise-data[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data/exercise-data[00m$ ls -F
+[0m[01;34malkanes[0m/  [01;34manimal-counts[0m/  [01;34mcreatures[0m/  numbers.txt  numbers.txt:Zone.Identifier  [01;34mwriting[0m/
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data/exercise-data[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data/exercise-data[00m$ pwd
+/home/hemanthburle/shell-lesson-data/exercise-data
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data/exercise-data[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data/exercise-data[00m$ cd shell-lesson-data
+bash: cd: shell-lesson-data: No such file or directory
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data/exercise-data[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data/exercise-data[00m$ cd ..
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data[00m$ cd ..
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ pwd
+/home/hemanthburle
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ ls -F -a
+[0m[01;34m.[0m/  [01;34m..[0m/  .bash_logout  .bashrc  [01;34m.landscape[0m/  .motd_shown  .profile  hemanth_unix_session  [01;34mshell-lesson-data[0m/
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ cd shell-lesson-data/exercise-data
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data/exercise-data[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data/exercise-data[00m$ cd ~
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ cd ~shell-les[Kes[K[Ksson-data/[K
+bash: cd: ~shell-lesson-data: No such file or directory
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ cd ~shell-lesson-data/shell-lesson-data[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data[00m$ cd exercise-data/creatures
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data/exercise-data/creatures[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data/exercise-data/creatures[00m$ cd -
+/home/hemanthburle/shell-lesson-data
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data[00m$ cd -
+/home/hemanthburle/shell-lesson-data/exercise-data/creatures
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data/exercise-data/creatures[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data/exercise-data/creatures[00m$ cd -
+/home/hemanthburle/shell-lesson-data
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data[00m$ cd -
+/home/hemanthburle/shell-lesson-data/exercise-data/creatures
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data/exercise-data/creatures[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data/exercise-data/creatures[00m$ cd.. ..
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data/exercise-data[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data/exercise-data[00m$ cd -
+/home/hemanthburle/shell-lesson-data/exercise-data/creatures
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data/exercise-data/creatures[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data/exercise-data/creatures[00m$ cd
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ ls shell-lesson-data/exercise-data/[K[1P[1@c[1@d[C[1P shell-lesson-data/exercise-data[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data/exercise-data[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data/exercise-data[00m$ cd
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ cd shell-lesson-data/ex[K[K[K/north-pacific-gyre/[K
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data/north-pacific-gyre[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data/north-pacific-gyre[00m$ ls
+NENE01729A.txt                  NENE01843A.txt:Zone.Identifier  NENE02040B.txt
+NENE01729A.txt:Zone.Identifier  NENE01843B.txt                  NENE02040B.txt:Zone.Identifier
+NENE01729B.txt                  NENE01843B.txt:Zone.Identifier  NENE02040Z.txt
+NENE01729B.txt:Zone.Identifier  NENE01971Z.txt                  NENE02040Z.txt:Zone.Identifier
+NENE01736A.txt                  NENE01971Z.txt:Zone.Identifier  NENE02043A.txt
+NENE01736A.txt:Zone.Identifier  NENE01978A.txt                  NENE02043A.txt:Zone.Identifier
+NENE01751A.txt                  NENE01978A.txt:Zone.Identifier  NENE02043B.txt
+NENE01751A.txt:Zone.Identifier  NENE01978B.txt                  NENE02043B.txt:Zone.Identifier
+NENE01751B.txt                  NENE01978B.txt:Zone.Identifier  goodiff.sh
+NENE01751B.txt:Zone.Identifier  NENE02018B.txt                  goodiff.sh:Zone.Identifier
+NENE01812A.txt                  NENE02018B.txt:Zone.Identifier  goostats.sh
+NENE01812A.txt:Zone.Identifier  NENE02040A.txt                  goostats.sh:Zone.Identifier
+NENE01843A.txt                  NENE02040A.txt:Zone.Identifier
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data/north-pacific-gyre[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data/north-pacific-gyre[00m$ cd goo[K[K[K[K[K[Kls goo
+ls: cannot access 'goo': No such file or directory
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data/north-pacific-gyre[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data/north-pacific-gyre[00m$ cd -
+/home/hemanthburle
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ cd shell-lesson-data/[K
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data[00m$ ls north-pacific-gyre/goo
+goodiff.sh                   goodiff.sh:Zone.Identifier   goostats.sh                  goostats.sh:Zone.Identifier
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data[00m$ ls north-pacific-gyre/goodiff.sh
+north-pacific-gyre/goodiff.sh
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data[00m$ cd north-pacific-gyre/goodiff.sh
+bash: cd: north-pacific-gyre/goodiff.sh: Not a directory
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data[00m$ cd north-pacific-gyre/[K
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data/north-pacific-gyre[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data/north-pacific-gyre[00m$ ls
+NENE01729A.txt                  NENE01843A.txt:Zone.Identifier  NENE02040B.txt
+NENE01729A.txt:Zone.Identifier  NENE01843B.txt                  NENE02040B.txt:Zone.Identifier
+NENE01729B.txt                  NENE01843B.txt:Zone.Identifier  NENE02040Z.txt
+NENE01729B.txt:Zone.Identifier  NENE01971Z.txt                  NENE02040Z.txt:Zone.Identifier
+NENE01736A.txt                  NENE01971Z.txt:Zone.Identifier  NENE02043A.txt
+NENE01736A.txt:Zone.Identifier  NENE01978A.txt                  NENE02043A.txt:Zone.Identifier
+NENE01751A.txt                  NENE01978A.txt:Zone.Identifier  NENE02043B.txt
+NENE01751A.txt:Zone.Identifier  NENE01978B.txt                  NENE02043B.txt:Zone.Identifier
+NENE01751B.txt                  NENE01978B.txt:Zone.Identifier  goodiff.sh
+NENE01751B.txt:Zone.Identifier  NENE02018B.txt                  goodiff.sh:Zone.Identifier
+NENE01812A.txt                  NENE02018B.txt:Zone.Identifier  goostats.sh
+NENE01812A.txt:Zone.Identifier  NENE02040A.txt                  goostats.sh:Zone.Identifier
+NENE01843A.txt                  NENE02040A.txt:Zone.Identifier
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data/north-pacific-gyre[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data/north-pacific-gyre[00m$ ls goo
+goodiff.sh                   goodiff.sh:Zone.Identifier   goostats.sh                  goostats.sh:Zone.Identifier
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data/north-pacific-gyre[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data/north-pacific-gyre[00m$ ls goodiff.sh
+goodiff.sh
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data/north-pacific-gyre[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data/north-pacific-gyre[00m$ cd -[K..
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data[00m$ cd excercie[Kse[K[K[K[K[K[K[K[K[K[K[K[Kls exercise-data/[1P exercise-data/[1P exercise-data/c exercise-data/d exercise-data/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cwriting/
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data/exercise-data/writing[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data/exercise-data/writing[00m$ ls -F
+LittleWomen.txt  LittleWomen.txt:Zone.Identifier  haiku.txt  haiku.txt:Zone.Identifier
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data/exercise-data/writing[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data/exercise-data/writing[00m$ mkdir thesis_hemanth
+mkdir: cannot create directory ‘thesis_hemanth’: Permission denied
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data/exercise-data/writing[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data/exercise-data/writing[00m$ mkdir thesis
+mkdir: cannot create directory ‘thesis’: Permission denied
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data/exercise-data/writing[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data/exercise-data/writing[00m$ ls -ald thesis'[K
+ls: cannot access 'thesis': No such file or directory
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data/exercise-data/writing[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data/exercise-data/writing[00m$ cd
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ ls[K[Kcdls -ald thesis
+ls: cannot access 'thesis': No such file or directory
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ sudo mkdir thesis
+[sudo] password for hemanthburle: 
+hemanthburle is not in the sudoers file.  This incident will be reported.
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ mkdoir[K[K[Kir thesis
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ ls
+hemanth_unix_session  [0m[01;34mshell-lesson-data[0m  [01;34mthesis[0m
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ .
+bash: .: filename argument required
+.: usage: . filename [arguments]
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ 
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ 
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ 
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ 
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ 
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ 
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ 
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ 
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ 
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ 
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ 
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ 
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ 
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ 
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ 
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ 
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ 
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ 
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ clea[K[K[K[Kls -F thesis
+]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ cd shell-lesson-data/e[Kexercise-data/writing/
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data/exercise-data/writing[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data/exercise-data/writing[00m$ mkdir hemanth_thesis
+mkdir: cannot create directory ‘hemanth_thesis’: Permission denied
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data/exercise-data/writing[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data/exercise-data/writing[00m$ sudo mkdir hemanth_thesis
+[sudo] password for hemanthburle: 
+hemanthburle is not in the sudoers file.  This incident will be reported.
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data/exercise-data/writing[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data/exercise-data/writing[00m$ ls
+LittleWomen.txt  LittleWomen.txt:Zone.Identifier  haiku.txt  haiku.txt:Zone.Identifier
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data/exercise-data/writing[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data/exercise-data/writing[00m$ ls -F
+LittleWomen.txt  LittleWomen.txt:Zone.Identifier  haiku.txt  haiku.txt:Zone.Identifier
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data/exercise-data/writing[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data/exercise-data/writing[00m$ mkdir hemanth_thesis
+mkdir: cannot create directory ‘hemanth_thesis’: Permission denied
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data/exercise-data/writing[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data/exercise-data/writing[00m$ ls
+LittleWomen.txt  LittleWomen.txt:Zone.Identifier  haiku.txt  haiku.txt:Zone.Identifier
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data/exercise-data/writing[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data/exercise-data/writing[00m$ mkdir [K[K[K[K[K[Ksudo mkdir thes[K[K[K[Knewthesis
+[sudo] password for hemanthburle: 
+hemanthburle is not in the sudoers file.  This incident will be reported.
+]0;hemanthburle@TIGER02278: ~/shell-lesson-data/exercise-data/writing[01;32mhemanthburle@TIGER02278[00m:[01;34m~/shell-lesson-data/exercise-data/writing[00m$ mkdir newthesis
+mkdir: cScript started on 2023-06-29 15:46:20+05:30 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="30"]
+(base) ]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ history
+    1  ls
+    2  pwd
+    3  ls -F
+    4  ls --help
+    5  ls -t
+    6  ls -r
+    7  ls -F shell-lesson-data
+    8  cd
+    9  cd shell-lesson-data
+   10  cd exercise-data
+   11  ls
+   12  ls -F
+   13  pwd
+   14  cd shell-lesson-data
+   15  cd ..
+   16  pwd
+   17  ls -F -a
+   18  cd shell-lesson-data/exercise-data
+   19  cd ~
+   20  cd ~shell-lesson-data
+   21  cd ~/shell-lesson-data
+   22  cd exercise-data/creatures
+   23  cd -
+   24  cd ..
+   25  cd -
+   26  cd
+   27  cd shell-lesson-data/exercise-data
+   28  cd
+   29  cd shell-lesson-data/north-pacific-gyre
+   30  ls
+   31  ls goo
+   32  cd -
+   33  cd shell-lesson-data
+   34  ls north-pacific-gyre/goodiff.sh
+   35  cd north-pacific-gyre/goodiff.sh
+   36  cd north-pacific-gyre
+   37  ls
+   38  ls goodiff.sh
+   39  cd ..
+   40  cd exercise-data/writing/
+   41  ls -F
+   42  mkdir thesis_hemanth
+   43  mkdir thesis
+   44  ls -ald thesis
+   45  cd
+   46  ls -ald thesis
+   47  sudo mkdir thesis
+   48  mkdir thesis
+   49  ls
+   50  .
+   51  ls -F thesis
+   52  cd shell-lesson-data/exercise-data/writing/
+   53  mkdir hemanth_thesis
+   54  sudo mkdir hemanth_thesis
+   55  ls
+   56  ls -F
+   57  mkdir hemanth_thesis
+   58  ls
+   59  sudo mkdir newthesis
+   60  mkdir newthesis
+   61  mkdir thesis
+   62  ls
+   63  mkdir new
+   64  clear
+   65  sudo mkdir newthesis
+   66  mkdir newthesis
+   67  whoami
+   68  sudo apt update
+   69  cd
+   70  ls
+   71  pwd
+   72  ls -F shell-lesson-data
+   73  cd shell-lesson-data
+   74  cd exercise-data
+   75  ls
+   76  ls -F
+   77  clear
+   78  cd
+   79  clear
+   80  script -a ~/hemanth_unix_session
+   81  cd shell-lesson-data/exercise-data/writing/
+   82  sudo mkdir newthesis
+   83  ls
+   84  ls -F newthesis
+   85  ls
+   86  mkdir -p ../project/data ../project/results
+   87  sudo mkdir -p ../project/data ../project/results
+   88  ls
+   89  cd thesis
+   90  cd newthesis
+   91  ls
+   92  cd
+   93  ls
+   94  cd shell-lesson-data/exercise-data/
+   95  ls
+   96  cd project/
+   97  ls
+   98  cd ..
+   99  cd writing/
+  100  ls
+  101  cd newthesis/
+  102  ls
+  103  nano draft.txt
+  104  sudo nano draft.txt
+  105  ls
+  106  cd shell-lesson-data/exercise-data/writing/newthesis/
+  107  ls
+  108  sudo nano draftnotes.txt
+  109  ls
+  110  cd ..
+  111  ls
+  112  cd newthesis/
+  113  ls
+  114  cd ..
+  115  mv newthesis/draft.txt newthesis/quaotes.txt
+  116  mv newthesis/draftnotes.txt newthesis/quotes.txt
+  117  sudo mv newthesis/draftnotes.txt newthesis/quotes.txt
+  118  ls
+  119  cd newthesis/
+  120  ls
+  121  sudo mv newthesis/quotes.txt
+  122  sudo mv newthesis/quotes.txt .
+  123  mv newthesis/quotes.txt .
+  124  cd
+  125  sudo mv newthesis/quotes.txt .
+  126  cd -
+  127  ls
+  128  sudo mv newthesis/quotes.txt .
+  129  cd ..
+  130  sudo mv newthesis/quotes.txt .
+  131  cd
+  132  ls
+  133  cd -
+  134  cd ..
+  135  ls
+  136  cd -
+  137  ls
+  138  cp quotes.txt newthesis/quotations.txt
+  139  sudo cp quotes.txt newthesis/quotations.txt
+  140  ls
+  141  cd newthesis/
+  142  ls
+  143  cd ..
+  144  cd
+  145  cd -
+  146  cp -r newthesis thesisbackup
+  147  sudo cp -r newthesis thesisbackup
+  148  ls newthesis thesisbackup
+  149  ls
+  150  sudo rm quotes.txt
+  151  ls
+  152  rm newthesis
+  153  rm -r newthesis
+  154  sudo rm -r newthesis
+  155  ls
+  156  cd ..
+  157  mkdir backup
+  158  sudo mkdir backup
+  159  cp creatures/minotaur.dat creatures/unicorn.dat backup/
+  160  sudo cp creatures/minotaur.dat creatures/unicorn.dat backup/
+  161  ls
+  162  cd backup/
+  163  ls
+  164  cd ..
+  165  cd alkanes/
+  166  ls
+  167  wc cubane.pdb
+  168  wc *.pdb
+  169  wc -l *.pdb
+  170  ls
+  171  wc -l *.pdb > length.txt
+  172  sudo wc -l *.pdb > length.txt
+  173  wc -l *.pdb > length.txt
+  174  ls length.txt
+  175  wc -l *.pdb>length.txt
+  176  wc -l *.pdb > length.txt
+  177  cd ..
+  178  ls
+  179  sort -n numbers.txt
+  180  sort -n numbers.txt > sortedlengths.txt
+  181  sudo sort -n numbers.txt > sortedlengths.txt
+  182  echo hi
+  183  echo hi > file1.txt
+  184  echo hi >> file1.txt
+  185  cd animal-counts
+  186  ls
+  187  cd animals.csv
+  188  head -n 3 animals.csv
+  189  head -n 3 animals.csv > ani-subset.csv
+  190  cd ..
+  191  sort -n numbers.txt | head -n 1
+  192  cd alkanes/
+  193  wc -l *.pdb |sort -n 
+  194  wc -l *.pdb |sort -n | head -n 1
+  195  wc -l *.pdb |sort -n | tail -n 1
+  196  wc -l *.pdb |sort -n | tail -n 2 
+  197  wc -l *.pdb |sort -n | tail -n 2 | head -n 1
+  198  wc -l *.pdb |sort -r | head -n 1
+  199  wc -l *.pdb |sort -r
+  200  cd ..
+  201  ls
+  202  cd animal-counts/
+  203  ls
+  204  cut -d , -f 2 animals.csv
+  205  cut -d , -f 2 animals.csv | sort | uniq
+  206  cd ..
+  207  wc -l *.pb
+  208  wc -l *.txt
+  209  wc -l *.txt | sort -n | head -n 5 
+  210  ls *Z.txt
+  211  cd ..
+  212  cd exercise-data/creatures/
+  213  for filename in minotaur.dat basilisk.dat unicorn.dat; do echo $filename; head -n 2 $filename | tail -n 1; done
+  214  sudo cp *.dat original-*.dat
+  215  for filename in *.dat; do cp $filename original-$filename; done
+  216  for f in *.dat; do sudo cp $f original-$f; done
+  217  ls
+  218  cd ..
+  219  ls
+  220  cd alkanes/
+  221  nano middle.sh
+  222  sudo nano middle.sh
+  223  cd shell-lesson-data/exercise-data/
+  224  ls
+  225  cd alkanes/
+  226  sudo nano middle.sh
+  227  bash middle.sh 
+  228  sudo nano middle.sh
+  229  bash middle.sh octane.pdb
+  230  bash middle.sh pentane.pdb
+  231  cd ../../north-pacific-gyre/
+  232  sudo nano do-stats.sh
+  233  bash do-stats.sh NENE*A.txt NENE*B.txt
+  234  bash do-stats.sh NENE*A.txt NENE*B.txt | wc -l
+  235  sudo bash do-stats.sh NENE*A.txt NENE*B.txt | wc -l
+  236  cd shell-lesson-data/north-pacific-gyre/
+  237  ls
+  238  ls do-stats.sh 
+  239  cd ..
+  240  cd exercise-data/writing/
+  241  cat haiku.txt
+  242  grep not haiku.txt
+  243  grep the haiku.txt
+  244  grep The haiku.txt
+  245  hrep -w The haiku.txt
+  246  grep -w The haiku.txt
+  247  grep -w "is not" haiku.txt
+  248  grep -n -w "it" haiku.txt
+  249  grep -n -w the haiku.txt
+  250  grep -w -n -v the haiku.txt
+  251  grep -r Yesterday .
+  252  cd ..
+  253  find .
+  254  find . -type d
+  255  find . -type f
+  256  find . -name *.txt
+  257  find . -name "*.txt"
+  258  grep searching $(find . -name "*.txt")
+  259  cd
+  260  exit
+  261  ls
+  262  sudo apt install git-all
+  263  sudo apt install install-info
+  264  sudo apt-get update
+  265  sudo apt-get upgrade
+  266  sudo apt install git-all
+  267  conda --version
+  268  git --version
+  269  git config --list --show-origin
+  270  git config --global user.name "Burle Hemanth"
+  271  git config --global user.email hemanth.burle@tigeranalytics.com
+  272  git config --global core.editor emacs
+  273  git config --global init.defaultBranch main
+  274  git config --list
+  275  ls
+  276  cd git_assignment_1.1
+  277  sudo mkdir git_assignment
+  278  ls
+  279  cd git_assignment/
+  280  git init
+  281  sudo git init
+  282  git ass *.c
+  283  git add *.c
+  284  git add LISCENSE
+  285  LS
+  286  ls
+  287  git status
+  288  cd
+  289  git status
+  290  la
+  291  ls
+  292  sudo echo 'My Project' > README
+  293  git status
+  294  sudo git status
+  295  git add README
+  296  sudo nano file.txt
+  297  cd git_assignment/
+  298  sudo nano file2.txt
+  299  git status
+  300  sudo git stauts
+  301  cd
+  302  git status
+  303  cd -
+  304  git status
+  305  git config --global --add safe.directory /home/hemanthburle/git_assignment
+  306  git status
+  307  sudo echo 'Hemanth' > README
+  308  echo 'Hemanth' > README
+  309  git add README
+  310  ls
+  311  git add file2.txt
+  312  sudo nano text.txt
+  313  sudo git add file2.txt
+  314  sudo -s
+  315  bash Miniconda3-latest-Linux-x86_64.sh
+  316  script -a ~/git_assignment_1.1
+  317  git tag
+  318  cd git_assignment/
+  319  git tag
+  320  git config --global alias.co checkout
+  321  git config --global alias.br branch
+  322  git config --global alias.ci commit
+  323  git config --global alias.st status
+  324  git last
+  325  git config --global alias.unstage 'reset HEAD --'
+  326  git unstage fileA
+  327  sudo git unstage fileA
+  328  git reset HEAD -- fileA
+  329  git config --global alias.last 'log -1 HEAD'
+  330  git last
+  331  git config --global alias.visual '!gitk'
+  332  git branch testing
+  333  sudo git branch testing
+  334  git log --oneline --decorate
+  335  git checkout testing
+  336  sudo git checkout testing
+  337  vim test.rb
+  338  git commit -1 -m 'Make a change'
+  339  git checkout master
+  340  sudo git checkout master
+  341  git log --oneline --decorate --graph -all
+  342  sudo git log --oneline --decorate --graph -all
+  343  sudo git checkout -b iss53
+  344  sudo git checkout master
+  345  sudo git checkout -b hotflix
+  346  sudo git checkout master
+  347  sudo git merge hotflix
+  348  git branch -d hotflix
+  349  sudo git branch -d hotflix
+  350  git status
+  351  git mergetoo;
+  352  git mergetool
+  353  git branch
+  354  git branch -v
+  355  git branch -merged
+  356  git branch --merged
+  357  git branch --no-merged
+  358  git branch -d testing
+  359  sudo git branch -d testing
+  360  sudo git branch --move bad-branch-name corrected-branch-name
+  361  sudo git branch --all
+  362  sudo git push origin --delete master
+  363  git push origin serverfix
+  364  git fetch origin
+  365  sudo git fetch origin
+  366  sudo git checkout experiment
+  367  sudo git rebase --onto master server client
+  368  sudo git checkout master
+  369  sudo git merge client
+  370  git rebase master server
+  371  git clone https://github.com/tonychacon/blink
+  372  sudo git clone https://github.com/tonychacon/blink
+  373  cd blink
+  374  sudo git checkout -b slow-blink
+  375  sed -i 's/1000/3000/' blink.ino 
+  376  sudo sed -i 's/1000/3000/' blink.ino 
+  377  sudo git diff --word-diff
+  378  sudo git commit -a -m 'Change delay to 3 seconds'
+  379  sudo git push origin slow-blink
+  380  sudo get remote add upstream https://github.com/schacon/blink
+  381  sudo git remote add upstream https://github.com/schacon/blink
+  382  git fetch upstream
+  383  sudo git fetch upstream
+  384  sudo git merge upstream/master
+  385  vim blink.ino
+  386  sudo git add blink.ino
+  387  git commit
+  388  sudo git commit
+  389  sudo git push origin slow-blink
+  390  sudo git checkout master
+  391  sudo git pull https://github.com/progit/progit2.git
+  392  suddsudo git push origin master
+  393  sudo git push origin master
+  394  sudo git fetch origin refs/pull/958/head
+  395  cd ..
+  396  curl https://api.github.com/users/schacon
+  397  curl https://api.github.com/gitignore/templates/Java
+  398  curl -H "Content -Type: application/json"\ -H "Authorization: token TOKEN"\ --data '{"body":"A new comment, :+1:"}' \ https://api.github.com/repos/schacon/blink/issues/6/comments
+  399  exit
+  400  cd
+  401  ls
+  402  script -a ~/conda_assignment_1.1
+  403  ls
+  404  cd miniconda3/
+  405  conda --version
+  406  conda update conda
+  407  conda create --name snowflakes biopython
+  408  conda activate snowflakes
+  409  conda info --envs
+  410  conda activate
+  411  conda create --name snakes python=3.9
+  412  conda activate snakes
+  413  conda info --envs
+  414  python --version
+  415  conda activate
+  416  exit
+  417  history
+(base) ]0;hemanthburle@TIGER02278: ~[01;32mhemanthburle@TIGER02278[00m:[01;34m~[00m$ exit
+exit
+
+Script done on 2023-06-29 15:47:03+05:30 [COMMAND_EXIT_CODE="0"]
